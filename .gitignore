@@ -3,3 +3,6 @@
 
 # ignore db file
 *.db
+
+# ignore pycharm file
+/.idea
