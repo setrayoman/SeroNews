@@ -1,9 +1,9 @@
-# db/db.py
+# m3_db/m3_db.py
 
 import sqlite3
 from typing import List, Dict
 
-DB_PATH = "data/articles.db"
+DB_PATH = "data/articles.m3_db"
 
 def init_db():
     conn = sqlite3.connect(DB_PATH)

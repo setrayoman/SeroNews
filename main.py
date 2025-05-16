@@ -1,5 +1,5 @@
-from fetchers import rss_fetcher
-from db import db
+from m1_fetchers import rss_fetcher
+from m3_db import db
 
 def main():
     db.init_db()
