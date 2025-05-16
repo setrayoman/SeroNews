@@ -3,7 +3,7 @@ import feedparser
 import sqlite3
 
 app = Flask(__name__)
-DB = 'news.db'
+DB = 'news.m3_db'
 
 # RSS feeds per category
 RSS_FEEDS = {
