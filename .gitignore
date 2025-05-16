@@ -1,7 +1,7 @@
 # ignore venv folder
 /venv
 
-# ignore db file
+# ignore m3_db file
 *.db
 
 # ignore pycharm file
