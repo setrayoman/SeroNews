@@ -112,7 +112,7 @@ def rss_test():
                 'source': feed.feed.title if 'title' in feed.feed else url,
                 'title': entry.title,
                 'link': link,
-                'publised': entry.published if 'published' in entry else 'N/A',
+                'published': entry.published if 'published' in entry else 'N/A',
                 'image': image_url,
                 'fetch_at': datetime.now().isoformat() #optional metadata
             }
@@ -137,3 +137,5 @@ if __name__ == "__main__":
     for i, article in enumerate(articles[:3], 1):
         print(f"{i}. {article['title']} ({article['published']})")
         print(f"   {article['link']}")
+
+    rss_test()
