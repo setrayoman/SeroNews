@@ -1,5 +1,6 @@
 # ignore venv folder
 /venv
+/data
 
 # ignore m3_db file
 *.db
