@@ -104,3 +104,11 @@ def save_parsed_articles(parsed_articles: List[Dict]):
             print(f"Failed to insert parsed article: {article['title']}\n{e}")
     conn.commit()
     conn.close()
+
+def mark_as_parsed(article_ids: List[int]):
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    for article_id in article_ids:
+        c.execute('UPDATE articles SET parsed = 1 WHERE id = ?', (article_id,))
+    conn.commit()
+    conn.close()

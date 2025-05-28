@@ -34,4 +34,9 @@ def parse_raw_articles():
 
     # Save them using centralized DB handling
     db.save_parsed_articles(parsed_articles)
+
+    # Mark articles as parsed
+    article_ids = [raw["id"] for raw in raw_articles]
+    db.mark_as_parsed(article_ids)
+
     print(f"✅ Saved {len(parsed_articles)} parsed articles to the database.")
