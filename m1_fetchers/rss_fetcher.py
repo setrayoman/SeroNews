@@ -9,15 +9,6 @@ import os
 
 JSON_FILE = 'financial_articles.json'
 
-
-# RSS feeds per category
-RSS_FEEDS = {
-    'investing_economy': 'https://www.investing.com/rss/news_14.rss',
-    'investing_stocks': 'https://www.investing.com/rss/news_25.rss',
-    'cnn_ekonomi': 'https://www.cnnindonesia.com/ekonomi/rss',
-    'cnbc_indonesia': 'https://www.cnbcindonesia.com/market/rss/'
-}
-
 def fetch_articles(feed_url: str) -> List[Dict]:
     """
     Fetch articles from an RSS feed URL.

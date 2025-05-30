@@ -1,4 +1,5 @@
 from m1_fetchers import rss_fetcher
+from m2_parsers.article_parser import parse_raw_articles
 from m3_db import db
 
 def main():
@@ -22,7 +23,11 @@ def main():
         print(f"- {article['title']} ({article['published']}) [{article['source']}]")
 
     db.save_articles(all_articles)
-    print(f"Saved {len(all_articles)} articles.")
+    print(f"✅ Saved {len(all_articles)} articles.")
+
+    # ✨ Parse raw articles to unified format
+    parse_raw_articles()
+    print("✅ Parsing of raw articles completed and inserted into parsed_articles.")
 
 if __name__ == "__main__":
     main()
