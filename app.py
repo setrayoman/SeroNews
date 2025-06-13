@@ -17,7 +17,7 @@ def get_articles():
 @app.route('/')
 def index():
     articles = get_articles()
-    return render_template('index.html', articles=articles)
+    return render_template('index_old.html', articles=articles)
 
 # def home():
 #     category = request.args.get('category', 'tech')
