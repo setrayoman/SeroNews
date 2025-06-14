@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Aggregator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-4">
+            <h1 class="text-center mb-4">📰 Latest News</h1>
+
+<!--        <div class="mb-3">-->
+<!--            <a href="/?category=tech" class="btn btn-outline-primary btn-sm">Tech</a>-->
+<!--            <a href="/?category=science" class="btn btn-outline-success btn-sm">Science</a>-->
+<!--            <a href="/?category=world" class="btn btn-outline-secondary btn-sm">World</a>-->
+<!--            <a href="/saved" class="btn btn-warning btn-sm float-end">Saved Articles</a>-->
+<!--        </div>-->
+
+        {% for article in articles %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ article.title }}</h5>
+                <p><small>{{ article.published }}</small></p>
+                <a href="{{ article.link }}" target="_blank" class="btn btn-sm btn-primary">Read More</a>
+                <form method="post" action="/save" style="display:inline;">
+                    <input type="hidden" name="title" value="{{ article.title }}">
+                    <input type="hidden" name="source" value="{{ article.source }}">
+                    <input type="hidden" name="published" value="{{ article.published_at }}">
+                    <button type="submit" class="btn btn-sm btn-outline-success">Save</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
