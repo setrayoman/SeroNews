@@ -20,7 +20,7 @@ def main():
     for article in all_articles:
         # You can add NLP classification here if needed
         # article['category'] = classifier.classify_article(article['summary'])
-        print(f"- {article['title']} ({article['published']}) [{article['source']}]")
+        print(f"- {article['title']} ({article['published']}) [{article['source']}] ")
 
     db.save_articles(all_articles)
     print(f"✅ Saved {len(all_articles)} articles.")

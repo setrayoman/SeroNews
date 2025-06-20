@@ -18,7 +18,8 @@ def init_db():
             published TEXT,
             source TEXT,
             parsed INTEGER DEFAULT 0,
-            category TEXT DEFAULT NULL
+            category TEXT DEFAULT NULL,
+            image_url TEXT
         )
     ''')
     # Table for parsed articles
@@ -50,17 +51,19 @@ def save_articles(articles: List[Dict]):
         try:
             c.execute('''
                 INSERT OR IGNORE INTO articles 
-                (title, link, summary, published, source) 
-                VALUES (?, ?, ?, ?, ?)
+                (title, link, summary, published, source, image_url) 
+                VALUES (?, ?, ?, ?, ?, ?)
             ''', (
                 article['title'],
                 article['link'],
                 article['summary'],
                 article['published'],
                 article['source'],
+                article["image_url"],
             ))
         except Exception as e:
             print(f"Failed to insert article: {article['title']}\n{e}")
+            print(f"image_url: {article['image_url']}")
     conn.commit()
     conn.close()
 
