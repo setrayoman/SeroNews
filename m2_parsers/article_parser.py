@@ -20,7 +20,7 @@ def parse_raw_articles():
             "content": raw["summary"] or "",
             "summary": raw["summary"] or "",
             "language": "en",
-            "image_url": None,
+            "image_url": raw["image_url"],
             "tags": [],
             "related_stocks": [],
             "metadata": {

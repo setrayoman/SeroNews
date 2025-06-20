@@ -74,7 +74,7 @@ def fetch_unparsed_articles() -> List[Dict]:
     rows = c.fetchall()
     conn.close()
 
-    keys = ["id", "title", "link", "summary", "published", "source", "parsed", "category"]
+    keys = ["id", "title", "link", "summary", "published", "source", "parsed", "category", "image_url"]
     return [dict(zip(keys, row)) for row in rows]
 
 def save_parsed_articles(parsed_articles: List[Dict]):
