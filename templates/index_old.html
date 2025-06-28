@@ -20,7 +20,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ article.title }}</h5>
                 <p><small>{{ article.published }}</small></p>
-                <a href="{{ article.link }}" target="_blank" class="btn btn-sm btn-primary">Read More</a>
+                <a href="{{ article.url }}" target="_blank" class="btn btn-sm btn-primary">Read More</a>
                 <form method="post" action="/save" style="display:inline;">
                     <input type="hidden" name="title" value="{{ article.title }}">
                     <input type="hidden" name="source" value="{{ article.source }}">

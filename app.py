@@ -9,6 +9,8 @@ def get_articles():
     conn = sqlite3.connect(db.DB_PATH)
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
+    cursor.execute("SELECT * FROM parsed_articles LIMIT 1")
+    print(cursor.fetchone().keys())
     cursor.execute("SELECT * FROM parsed_articles ORDER BY published_at DESC LIMIT 20")
     articles = cursor.fetchall()
     conn.close()
