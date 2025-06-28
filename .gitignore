@@ -7,3 +7,8 @@
 
 # ignore pycharm file
 .idea
+
+# ignore pycache file
+__pycache__/
+*.pyc
+*.pyo
